@@ -9,6 +9,7 @@ import {
 	SNOW,
 	WINDY
 } from '../../../constants/weathers';
+import './styles.css';
 
 //Icons
 const icons = {
@@ -23,20 +24,22 @@ const icons = {
 //Método que retorna el icono a mostrar según el estado del clima
 const getWeatherIcon = weatherState => {
 	let icon = icons[weatherState];
+	const iconSize = "4x";
 	//Si no ecuentra icono
 	if (!icon) {
 		icon = "day-sunny";
 	}
-	return <WeatherIcons name={icon} size="2x" />;
+	return <WeatherIcons className="wicon" name={icon} size={iconSize} />;
 };
 
 //Definición del componente WeatherTemperature
 const WeatherTemperature = ({ temperature, weatherState }) => (
-	<div>
+	<div className="weatherTemperatureCont">
 		{
 			getWeatherIcon(weatherState)
 		}
-		<span>{`${temperature} C°`}</span>
+		<span className="temperature">{`${temperature}`}</span>
+		<span className="temperatureType">{` C°`}</span>
 	</div>
 );
 

@@ -1,9 +1,12 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import './styles.css';
 
-const Location = ({ city }) => {
-	return <div><h1>{city}</h1></div>
-};
+const Location = ({ city }) => (
+	<div className="locationCont">
+		<h1>{city}</h1>
+	</div>
+);
 
 //Define tipo de datos
 Location.propTypes = {
