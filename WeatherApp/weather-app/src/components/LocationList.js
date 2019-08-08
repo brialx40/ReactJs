@@ -3,6 +3,7 @@ import {
 	PropTypes
 } from 'prop-types';
 import WeatherLocation from './WeatherLocation';
+import './styles.css';
 
 
 //Se define LocationList
@@ -23,7 +24,7 @@ const LocationList = ({ cities, onSelectedLocation }) => {
 			))
 	);
 	return (
-		<div>
+		<div className="locationList">
 			{
 				getComponentsWL(cities)
 			}

@@ -10,7 +10,7 @@ import {
 
 //función que convierte datos K a C°
 const getTemp = kelvin => {
-	return Number(convert(kelvin).from("K").to("C").toFixed(2));
+	return Number(convert(kelvin).from("K").to("C").toFixed(0));
 }
 //función que retorna el estado del clima
 const getWeatherState = weather_data => {
