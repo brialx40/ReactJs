@@ -1,13 +1,28 @@
 import React, { Component } from 'react';
-import WeatherLocation from './components/WeatherLocation';
+import LocationList from './components/LocationList';
 import './App.css';
+
+//Lista de ciudades
+const cities = [
+	"Bogota,co",
+	"Buenos Aires,ar",
+	"Washington,us",
+	"Barcelona,es"
+];
 
 // Definición de una Class component
 class App extends Component {
+	//Se define método que ejecuta ev
+	handleSelectionLocation = city => {
+		console.log(`handleSelectionLocation ${city}`);
+	}
+
 	render() {
 		return (
 			<div className="App" >
-				<WeatherLocation />
+				<LocationList
+					cities={cities}
+					onSelectedLocation={this.handleSelectionLocation} />
 			</div>
 		);
 	};
